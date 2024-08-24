@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Stiven Ocampo - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            transition: transform 0.3s ease;
+            transform: translateX(-250px);
+            width: 250px;
+            height: 100%;
+            background-color: #f9f9f9;
+        }
+        
+        .sidebar.open {
+            transform: translateX(0);
+        }
+        
+        #hamburger {
+            background: #00ff55;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            color: white;
+            margin-top: auto;
+        }
+        
+        #hamburger:hover {
+            background: #333;
+            margin-top: auto;
+        }
+
+        body {
+            margin-left: 250px;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #00ff55;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            padding: 1px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            text-align: right;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            margin-left: 10px;
+        }
+
+        .header img {
+            height: 40px;
+            width: auto;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #1d4ed8;
+            font-weight: bold;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #00ff55;
+            color: #1e40af;
+        }
+
+        main {
+            margin-left: 250px;
+            margin-top: 60px;
+        }
+
+        .table-container {
+            display: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f9fafb;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f1f5f9;
+        }
+
+        tbody tr:hover {
+            background-color: #e5e7eb;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <header class="header">
+        <button id="hamburger" class="text-white focus:outline-none">
+            <i class="fas fa-bars fa-2x"></i>
+        </button>
+        <div class="container">
+            <img src="..//Sitio Web/images/Captura_de_pantalla_2024-08-14_091934-removebg-preview.png" alt="Profile Image">
+            <h1 class="text-2xl font-bold">David Stiven Ocampo</h1>
+        </div>
+    </header>
+
+    <div id="sidebar" class="sidebar fixed top-0 left-0 w-64 h-screen bg-gray-100 p-5 border-r border-gray-300 z-50">
+        <button id="close-sidebar" class="text-gray-600 hover:text-gray-900 absolute top-4 right-4">
+            <i class="fas fa-times fa-2x"></i>
+        </button>
+        <ul>
+            <li class="mb-2"><a href="#" class="text-blue-600 font-bold hover:underline" onclick="showTable('pc-dos')">PC DOS</a></li>
+            <li class="mb-2"><a href="#" class="text-blue-600 font-bold hover:underline" onclick="showTable('ms-dos')">MS-DOS</a></li>
+            <li class="mb-2"><a href="#" class="text-blue-600 font-bold hover:underline" onclick="showTable('windows-home')">WINDOWS HOME</a></li>
+            <li class="mb-2"><a href="#" class="text-blue-600 font-bold hover:underline" onclick="showTable('windows-server')">WINDOWS SERVER</a></li>
+            <li class="mb-2"><a href="#" class="text-blue-600 font-bold hover:underline" onclick="showTable('mac-os')">MAC OS</a></li>
+        </ul>
+    </div>
+
+    <main class="ml-64 mt-16">
+        <div id="pc-dos" class="table-container">
+            <h2 class="text-3xl font-bold mb-4">Historial PC DOS</h2>
+            <table class="min-w-full bg-white border border-gray-300">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 border-b">Nombre</th>
+                        <th class="py-2 px-4 border-b">Versión (SO)</th>
+                        <th class="py-2 px-4 border-b">Versión Kernel</th>
+                        <th class="py-2 px-4 border-b">Año Lanzamiento</th>
+                        <th class="py-2 px-4 border-b">Procesador</th>
+                        <th class="py-2 px-4 border-b">Velocidad</th>
+                        <th class="py-2 px-4 border-b">Arquitectura</th>
+                        <th class="py-2 px-4 border-b">Número de Hilos</th>
+                        <th class="py-2 px-4 border-b">Tipo</th>
+                        <th class="py-2 px-4 border-b">Capacidad</th>
+                        <th class="py-2 px-4 border-b">Frecuencia (Velocidad)</th>
+                        <th class="py-2 px-4 border-b">Novedades del Hardware</th>
+                        <th class="py-2 px-4 border-b">Novedades del Software</th>
+                        <th class="py-2 px-4 border-b">Pantallazo Escritorio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-2 px-4 border-b">PC DOS</td>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">1981</td>
+                        <td class="py-2 px-4 border-b">Intel 8088</td>
+                        <td class="py-2 px-4 border-b">4,77 MHz</td>
+                        <td class="py-2 px-4 border-b">16 bits</td>
+                        <td class="py-2 px-4 border-b">No tiene múltiples núcleos o hilos como los procesadores modernos, su diseño se basa en un único núcleo con un bus de datos externo de 8 bits.</td>
+                        <td class="py-2 px-4 border-b">DRAM</td>
+                        <td class="py-2 px-4 border-b">64KB</td>
+                        <td class="py-2 px-4 border-b">200 ns a 150 ns</td>
+                        <td class="py-2 px-4 border-b">IBM PC (modelo 5150): Procesador Intel 8088, 16 KB de RAM, almacenamiento en disquetes de 5.25 pulgadas. Tarjeta de video CGA (Color Graphics Adapter) para gráficos en color.</td>
+                        <td class="py-2 px-4 border-b">- Sistema operativo básico para IBM PC. - Soporte para comandos básicos de archivo como DIR, COPY, DEL, REN.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen1MS-Os.png" alt="Rhapsody Developer Release" /></td>
+                    </tr>
+                    <!-- Agrega las demás versiones de PC DOS aquí -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div id="ms-dos" class="table-container">
+            <h2 class="text-3xl font-bold mb-4">Historia MS-DOS</h2>
+            <table class="min-w-full bg-white border border-gray-300">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 border-b">Nombre</th>
+                        <th class="py-2 px-4 border-b">Versión (SO)</th>
+                        <th class="py-2 px-4 border-b">Versión Kernel</th>
+                        <th class="py-2 px-4 border-b">Año Lanzamiento</th>
+                        <th class="py-2 px-4 border-b">Procesador</th>
+                        <th class="py-2 px-4 border-b">Velocidad</th>
+                        <th class="py-2 px-4 border-b">Arquitectura</th>
+                        <th class="py-2 px-4 border-b">Número de Hilos</th>
+                        <th class="py-2 px-4 border-b">Tipo</th>
+                        <th class="py-2 px-4 border-b">Capacidad</th>
+                        <th class="py-2 px-4 border-b">Frecuencia (Velocidad)</th>
+                        <th class="py-2 px-4 border-b">Novedades del Hardware</th>
+                        <th class="py-2 px-4 border-b">Novedades del Software</th>
+                        <th class="py-2 px-4 border-b">Pantallazo Escritorio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-2 px-4 border-b">PC DOS</td>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">1981</td>
+                        <td class="py-2 px-4 border-b">Intel 8088</td>
+                        <td class="py-2 px-4 border-b">4,77 MHz</td>
+                        <td class="py-2 px-4 border-b">16 bits</td>
+                        <td class="py-2 px-4 border-b">No tiene múltiples núcleos o hilos como los procesadores modernos, su diseño se basa en un único núcleo con un bus de datos externo de 8 bits.</td>
+                        <td class="py-2 px-4 border-b">DRAM</td>
+                        <td class="py-2 px-4 border-b">64KB</td>
+                        <td class="py-2 px-4 border-b">200 ns a 150 ns</td>
+                        <td class="py-2 px-4 border-b">IBM PC (modelo 5150): Procesador Intel 8088, 16 KB de RAM, almacenamiento en disquetes de 5.25 pulgadas. Tarjeta de video CGA (Color Graphics Adapter) para gráficos en color.</td>
+                        <td class="py-2 px-4 border-b">- Sistema operativo básico para IBM PC. - Soporte para comandos básicos de archivo como DIR, COPY, DEL, REN.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen1MS-Os.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para PC DOS 1.1 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">PC DOS</td>
+                        <td class="py-2 px-4 border-b">1.1</td>
+                        <td class="py-2 px-4 border-b">1.1</td>
+                        <td class="py-2 px-4 border-b">1982</td>
+                        <td class="py-2 px-4 border-b">Intel 8088</td>
+                        <td class="py-2 px-4 border-b">4,77 MHz</td>
+                        <td class="py-2 px-4 border-b">16 bits</td>
+                        <td class="py-2 px-4 border-b">No tiene múltiples núcleos o hilos como los procesadores modernos, su diseño se basa en un único núcleo con un bus de datos externo de 8 bits.</td>
+                        <td class="py-2 px-4 border-b">DRAM</td>
+                        <td class="py-2 px-4 border-b">64KB</td>
+                        <td class="py-2 px-4 border-b">200 ns a 150 ns</td>
+                        <td class="py-2 px-4 border-b">Expansión en opciones de almacenamiento: Soporte para unidades de disquete de 5.25 pulgadas de doble cara (360 KB).</td>
+                        <td class="py-2 px-4 border-b">- Introducción de soporte para discos de 5.25 pulgadas de doble cara (360 KB). - Mejoras en el sistema de archivos.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen2MS-Os.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MS-DOS 2 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">MS-DOS</td>
+                        <td class="py-2 px-4 border-b">2</td>
+                        <td class="py-2 px-4 border-b">2</td>
+                        <td class="py-2 px-4 border-b">1983</td>
+                        <td class="py-2 px-4 border-b">Intel 8088</td>
+                        <td class="py-2 px-4 border-b">4,77 MHz</td>
+                        <td class="py-2 px-4 border-b">16 bits</td>
+                        <td class="py-2 px-4 border-b">No tiene múltiples núcleos o hilos como los procesadores modernos, su diseño se basa en un único núcleo con un bus de datos externo de 8 bits.</td>
+                        <td class="py-2 px-4 border-b">DRAM</td>
+                        <td class="py-2 px-4 border-b">64KB</td>
+                        <td class="py-2 px-4 border-b">150 ns a 120 ns</td>
+                        <td class="py-2 px-4 border-b">IBM PC/XT (modelo 5160): Disco duro de 10 MB, expandiendo la capacidad de almacenamiento.</td>
+                        <td class="py-2 px-4 border-b">- Introducción de directorios para organizar archivos. - Soporte para discos duros. - Nuevos comandos como FORMAT, CHDIR, MD.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen3MS-Os.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para PC DOS 2.1 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">PC DOS</td>
+                        <td class="py-2 px-4 border-b">2.1</td>
+                        <td class="py-2 px-4 border-b">2.1</td>
+                        <td class="py-2 px-4 border-b">1983</td>
+                        <td class="py-2 px-4 border-b">Intel 8088</td>
+                        <td class="py-2 px-4 border-b">4,77 MHz</td>
+                        <td class="py-2 px-4 border-b">16 bits</td>
+                        <td class="py-2 px-4 border-b">No tiene múltiples núcleos o hilos como los procesadores modernos, su diseño se basa en un único núcleo con un bus de datos externo de 8 bits.</td>
+                        <td class="py-2 px-4 border-b">DRAM</td>
+                        <td class="py-2 px-4 border-b">64KB</td>
+                        <td class="py-2 px-4 border-b">150 ns a 120 ns</td>
+                        <td class="py-2 px-4 border-b">IBM PC/XT (modelo 5160): Consolidación del PC/XT como estándar con disco duro y expansión en el soporte de hardware.</td>
+                        <td class="py-2 px-4 border-b">- Soporte para discos de 10 MB en el IBM PC/XT. - Mejoras en la administración de archivos y directorios.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen4MS-Os.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MS-DOS 2.11 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">MS-DOS</td>
+                        <td class="py-2 px-4 border-b">2.11</td>
+                        <td class="py-2 px-4 border-b">2.11</td>
+                        <td class="py-2 px-4 border-b">1983</td>
+                        <td class="py-2 px-4 border-b">Intel 8088</td>
+                        <td class="py-2 px-4 border-b">4,77 MHz</td>
+                        <td class="py-2 px-4 border-b">16 bits</td>
+                        <td class="py-2 px-4 border-b">No tiene múltiples núcleos o hilos como los procesadores modernos, su diseño se basa en un único núcleo con un bus de datos externo de 8 bits.</td>
+                        <td class="py-2 px-4 border-b">DRAM</td>
+                        <td class="py-2 px-4 border-b">64KB</td>
+                        <td class="py-2 px-4 border-b">120 ns a 100 ns</td>
+                        <td class="py-2 px-4 border-b">Compatibilidad mejorada con el hardware del IBM PC/XT, mejorando la funcionalidad para el hardware existente.</td>
+                        <td class="py-2 px-4 border-b">- Mejoras en la compatibilidad y estabilidad. - Correcciones de errores y optimización de funciones existentes.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen5MS-Os.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MS-DOS 3.2 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">MS-DOS</td>
+                        <td class="py-2 px-4 border-b">3.2</td>
+                        <td class="py-2 px-4 border-b">3.2</td>
+                        <td class="py-2 px-4 border-b">1986</td>
+                        <td class="py-2 px-4 border-b">Intel 8088</td>
+                        <td class="py-2 px-4 border-b">4,77 MHz</td>
+                        <td class="py-2 px-4 border-b">16 bits</td>
+                        <td class="py-2 px-4 border-b">No tiene múltiples núcleos o hilos como los procesadores modernos, su diseño se basa en un único núcleo con un bus de datos externo de 8 bits.</td>
+                        <td class="py-2 px-4 border-b">DRAM</td>
+                        <td class="py-2 px-4 border-b">256KB</td>
+                        <td class="py-2 px-4 border-b">120 ns a 100 ns</td>
+                        <td class="py-2 px-4 border-b">IBM PC/AT (modelo 5170): Procesador Intel 80286, hasta 16 MB de RAM. Tarjeta de video EGA (Enhanced Graphics Adapter) con mayor resolución y más colores.</td>
+                        <td class="py-2 px-4 border-b">- Soporte para el IBM PC/AT. - Introducción del soporte para particiones grandes de disco duro. - Nuevos comandos y utilidades.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen6MS-Os.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para PC DOS 3.3 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">PC DOS</td>
+                        <td class="py-2 px-4 border-b">3.3</td>
+                        <td class="py-2 px-4 border-b">3.3</td>
+                        <td class="py-2 px-4 border-b">1987</td>
+                        <td class="py-2 px-4 border-b">Intel 8088</td>
+                        <td class="py-2 px-4 border-b">4,77 MHz</td>
+                        <td class="py-2 px-4 border-b">16 bits</td>
+                        <td class="py-2 px-4 border-b">No tiene múltiples núcleos o hilos como los procesadores modernos, su diseño se basa en un único núcleo con un bus de datos externo de 8 bits.</td>
+                        <td class="py-2 px-4 border-b">DRAM</td>
+                        <td class="py-2 px-4 border-b">640KB</td>
+                        <td class="py-2 px-4 border-b">100 ns a 80 ns</td>
+                        <td class="py-2 px-4 border-b">IBM PC/AT (modelo 5170): Soporte para más memoria y discos duros más grandes. Memoria expandida con mayor capacidad de direccionamiento.</td>
+                        <td class="py-2 px-4 border-b">- Soporte para discos duros más grandes y la expansión de la capacidad del sistema de archivos. - Mejoras en la administración de memoria.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen7MS-Os.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MS-DOS 3.3 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">MS-DOS</td>
+                        <td class="py-2 px-4 border-b">3.3</td>
+                        <td class="py-2 px-4 border-b">3.3</td>
+                        <td class="py-2 px-4 border-b">1987</td>
+                        <td class="py-2 px-4 border-b">Intel 8088</td>
+                        <td class="py-2 px-4 border-b">4,77 MHz</td>
+                        <td class="py-2 px-4 border-b">16 bits</td>
+                        <td class="py-2 px-4 border-b">No tiene múltiples núcleos o hilos como los procesadores modernos, su diseño se basa en un único núcleo con un bus de datos externo de 8 bits.</td>
+                        <td class="py-2 px-4 border-b">DRAM</td>
+                        <td class="py-2 px-4 border-b">640KB</td>
+                        <td class="py-2 px-4 border-b">100 ns a 80 ns</td>
+                        <td class="py-2 px-4 border-b">IBM PC/AT (modelo 5170): Soporte para hardware mejorado como la tarjeta EGA y discos duros más grandes.</td>
+                        <td class="py-2 px-4 border-b">- Mejoras en la compatibilidad con hardware. - Expansión en el soporte para discos duros y sistemas de archivos. - Nuevas utilidades.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen8MS-Os.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MS-DOS 4 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">MS-DOS</td>
+                        <td class="py-2 px-4 border-b">4</td>
+                        <td class="py-2 px-4 border-b">4</td>
+                        <td class="py-2 px-4 border-b">1988</td>
+                        <td class="py-2 px-4 border-b">Intel 8088</td>
+                        <td class="py-2 px-4 border-b">4,77 MHz</td>
+                        <td class="py-2 px-4 border-b">16 bits</td>
+                        <td class="py-2 px-4 border-b">No tiene múltiples núcleos o hilos como los procesadores modernos, su diseño se basa en un único núcleo con un bus de datos externo de 8 bits.</td>
+                        <td class="py-2 px-4 border-b">DRAM</td>
+                        <td class="py-2 px-4 border-b">1MB</td>
+                        <td class="py-2 px-4 border-b">80 ns a 60 ns</td>
+                        <td class="py-2 px-4 border-b">IBM PS/2 (modelo 8550): Procesadores Intel 80286, nueva arquitectura Micro Channel Architecture (MCA). Discos duros más grandes y soporte para más memoria.</td>
+                        <td class="py-2 px-4 border-b">- Introducción de soporte para la arquitectura Micro Channel (MCA). - Nuevas características de administración de memoria. - Soporte para particiones de disco más grandes.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen9MS-Os.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para PC DOS 4 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">PC DOS</td>
+                        <td class="py-2 px-4 border-b">4</td>
+                        <td class="py-2 px-4 border-b">4</td>
+                        <td class="py-2 px-4 border-b">1988</td>
+                        <td class="py-2 px-4 border-b">Intel 8088</td>
+                        <td class="py-2 px-4 border-b">4,77 MHz</td>
+                        <td class="py-2 px-4 border-b">16 bits</td>
+                        <td class="py-2 px-4 border-b">No tiene múltiples núcleos o hilos como los procesadores modernos, su diseño se basa en un único núcleo con un bus de datos externo de 8 bits.</td>
+                        <td class="py-2 px-4 border-b">DRAM</td>
+                        <td class="py-2 px-4 border-b">1MB</td>
+                        <td class="py-2 px-4 border-b">80 ns a 60 ns</td>
+                        <td class="py-2 px-4 border-b">IBM PS/2 (modelo 8550): Soporte para arquitectura MCA y mejoras en discos duros y memoria expandida.</td>
+                        <td class="py-2 px-4 border-b">- Soporte para la arquitectura MCA. - Mejoras en la administración de discos y memoria. - Nuevas funciones de sistema de archivos.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen10MS-Os.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MS-DOS 4.01 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">MS-DOS</td>
+                        <td class="py-2 px-4 border-b">4.01</td>
+                        <td class="py-2 px-4 border-b">4.01</td>
+                        <td class="py-2 px-4 border-b">1989</td>
+                        <td class="py-2 px-4 border-b">Intel 8088</td>
+                        <td class="py-2 px-4 border-b">4,77 MHz</td>
+                        <td class="py-2 px-4 border-b">16 bits</td>
+                        <td class="py-2 px-4 border-b">No tiene múltiples núcleos o hilos como los procesadores modernos, su diseño se basa en un único núcleo con un bus de datos externo de 8 bits.</td>
+                        <td class="py-2 px-4 border-b">DRAM</td>
+                        <td class="py-2 px-4 border-b">1MB</td>
+                        <td class="py-2 px-4 border-b">80 ns a 60 ns</td>
+                        <td class="py-2 px-4 border-b">IBM PS/2 (modelo 8550): Correcciones y mejoras en la compatibilidad con hardware PS/2 y arquitectura MCA.</td>
+                        <td class="py-2 px-4 border-b">- Correcciones de errores y mejoras en la compatibilidad con hardware. - Optimización de funciones y corrección de errores de la versión 4.0.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen11MS-Os.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MS-DOS 5 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">MS-DOS</td>
+                        <td class="py-2 px-4 border-b">5</td>
+                        <td class="py-2 px-4 border-b">5</td>
+                        <td class="py-2 px-4 border-b">1991</td>
+                        <td class="py-2 px-4 border-b">Intel 8088</td>
+                        <td class="py-2 px-4 border-b">4,77 MHz</td>
+                        <td class="py-2 px-4 border-b">16 bits</td>
+                        <td class="py-2 px-4 border-b">No tiene múltiples núcleos o hilos como los procesadores modernos, su diseño se basa en un único núcleo con un bus de datos externo de 8 bits.</td>
+                        <td class="py-2 px-4 border-b">DRAM</td>
+                        <td class="py-2 px-4 border-b">2GB</td>
+                        <td class="py-2 px-4 border-b">70 ns a 60 ns</td>
+                        <td class="py-2 px-4 border-b">Intel 80386 y 80486: Mejora en rendimiento, soporte para multitarea y más memoria. Soporte para memoria extendida y administradores de memoria. Discos duros más grandes y unidades de CD-ROM.</td>
+                        <td class="py-2 px-4 border-b">- Introducción de soporte para memoria extendida (XMS). - Mejora en el sistema de gestión de archivos. - Nuevas utilidades como EDIT, UNDELETE, y MEM.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen12MS-Os.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MS-DOS 6 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">MS-DOS</td>
+                        <td class="py-2 px-4 border-b">6</td>
+                        <td class="py-2 px-4 border-b">6</td>
+                        <td class="py-2 px-4 border-b">1993</td>
+                        <td class="py-2 px-4 border-b">Intel 80386/80486</td>
+                        <td class="py-2 px-4 border-b">16 MHz 66 MHz</td>
+                        <td class="py-2 px-4 border-b">x86</td>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">RAM</td>
+                        <td class="py-2 px-4 border-b">1 MB 16 MB</td>
+                        <td class="py-2 px-4 border-b">16 MHz 66 MHz</td>
+                        <td class="py-2 px-4 border-b">- Mejora en el soporte para discos duros grandes. - Introducción de Disk Compression (Doublespace).</td>
+                        <td class="py-2 px-4 border-b">- Mejoras en la administración de disco y memoria. - Nuevas utilidades como Defrag y ScanDisk.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen13MS-Os.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MS-DOS 6.2 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">MS-DOS</td>
+                        <td class="py-2 px-4 border-b">6.2</td>
+                        <td class="py-2 px-4 border-b">6.2</td>
+                        <td class="py-2 px-4 border-b">1994</td>
+                        <td class="py-2 px-4 border-b">Intel 80386/80486</td>
+                        <td class="py-2 px-4 border-b">16 MHz 66 MHz</td>
+                        <td class="py-2 px-4 border-b">x86</td>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">RAM</td>
+                        <td class="py-2 px-4 border-b">1 MB 16 MB</td>
+                        <td class="py-2 px-4 border-b">16 MHz 66 MHz</td>
+                        <td class="py-2 px-4 border-b">- Introducción de soporte mejorado para discos duros y nuevas capacidades de compresión.</td>
+                        <td class="py-2 px-4 border-b">- Actualizaciones en las herramientas de administración del sistema. - Mejoras en la funcionalidad de Doublespace.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen14MS-Os.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MS-DOS 6.21 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">MS-DOS</td>
+                        <td class="py-2 px-4 border-b">6.21</td>
+                        <td class="py-2 px-4 border-b">6.21</td>
+                        <td class="py-2 px-4 border-b">1994</td>
+                        <td class="py-2 px-4 border-b">Intel 80386/80486</td>
+                        <td class="py-2 px-4 border-b">16 MHz 66 MHz</td>
+                        <td class="py-2 px-4 border-b">x86</td>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">RAM</td>
+                        <td class="py-2 px-4 border-b">1 MB 16 MB</td>
+                        <td class="py-2 px-4 border-b">16 MHz 66 MHz</td>
+                        <td class="py-2 px-4 border-b">- Mejoras en la compatibilidad con hardware. - Correcciones y actualizaciones en las herramientas de sistema.</td>
+                        <td class="py-2 px-4 border-b">- Corrección de errores y mejoras en la funcionalidad de Doublespace y Defrag. - Mejoras en el manejo de memoria.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen15MS-Os.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para PC DOS 6.3 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">PC DOS</td>
+                        <td class="py-2 px-4 border-b">6.3</td>
+                        <td class="py-2 px-4 border-b">6.3</td>
+                        <td class="py-2 px-4 border-b">1994</td>
+                        <td class="py-2 px-4 border-b">Intel 80386/80486</td>
+                        <td class="py-2 px-4 border-b">16 MHz 66 MHz</td>
+                        <td class="py-2 px-4 border-b">x86</td>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">RAM</td>
+                        <td class="py-2 px-4 border-b">1 MB 16 MB</td>
+                        <td class="py-2 px-4 border-b">16 MHz 66 MHz</td>
+                        <td class="py-2 px-4 border-b">- Introducción de soporte para nuevas funciones de hardware IBM. - Mejoras en la compatibilidad con hardware y periféricos.</td>
+                        <td class="py-2 px-4 border-b">- Nuevas herramientas para la administración del sistema. - Mejoras en la funcionalidad de herramientas de disco.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen16MS-Os.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MS-DOS 6.22 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">MS-DOS</td>
+                        <td class="py-2 px-4 border-b">6.22</td>
+                        <td class="py-2 px-4 border-b">6.22</td>
+                        <td class="py-2 px-4 border-b">1994</td>
+                        <td class="py-2 px-4 border-b">Intel 80386/80486</td>
+                        <td class="py-2 px-4 border-b">16 MHz 66 MHz</td>
+                        <td class="py-2 px-4 border-b">x86</td>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">RAM</td>
+                        <td class="py-2 px-4 border-b">1 MB 16 MB</td>
+                        <td class="py-2 px-4 border-b">16 MHz 66 MHz</td>
+                        <td class="py-2 px-4 border-b">- Mejoras en la administración de discos y compresión. - Actualizaciones en la compatibilidad con hardware.</td>
+                        <td class="py-2 px-4 border-b">- Correcciones y optimizaciones de la versión 6.21. - Nuevas herramientas para la administración del disco y el sistema.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen17MS-Os.png" alt="" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="windows-home" class="table-container">
+            <h2 class="text-3xl font-bold mb-4">Historia Windows Home</h2>
+            <table class="min-w-full bg-white border border-gray-300">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Sistema Operativo</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Versión</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Código de Versión</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Lanzamiento</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Procesador</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Velocidad</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Arquitectura</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Manejo de Hilos</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Tipo de Memoria</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Capacidad de Memoria</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Velocidad de Memoria</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Mejoras en Hardware</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Características</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Pantallazo Escritorio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Fila para Windows 2.0 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">2.0</td>
+                        <td class="py-2 px-4 border-b">2.0</td>
+                        <td class="py-2 px-4 border-b">1987</td>
+                        <td class="py-2 px-4 border-b">Intel 8088/8086</td>
+                        <td class="py-2 px-4 border-b">4.77 MHz</td>
+                        <td class="py-2 px-4 border-b">x86</td>
+                        <td class="py-2 px-4 border-b">No tenía un modelo de hilos multihilo en el sentido moderno; era un sistema multitarea cooperativo.</td>
+                        <td class="py-2 px-4 border-b">DRAM</td>
+                        <td class="py-2 px-4 border-b">640 KB o más</td>
+                        <td class="py-2 px-4 border-b">4.77 MHz (procesadores Intel 8088 y compatibles)</td>
+                        <td class="py-2 px-4 border-b">Soporte para gráficos EGA</td>
+                        <td class="py-2 px-4 border-b">Introdujo ventanas superpuestas, iconos de escritorio y mejor soporte gráfico.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen1WinH.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows 3.0 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">3.0</td>
+                        <td class="py-2 px-4 border-b">3.0</td>
+                        <td class="py-2 px-4 border-b">1990</td>
+                        <td class="py-2 px-4 border-b">Intel 80286/80386</td>
+                        <td class="py-2 px-4 border-b">12-20 MHz</td>
+                        <td class="py-2 px-4 border-b">x86</td>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">DRAM</td>
+                        <td class="py-2 px-4 border-b">1 MB o más</td>
+                        <td class="py-2 px-4 border-b">6-8 MHz (procesadores Intel 8086 y 8088)</td>
+                        <td class="py-2 px-4 border-b">Soporte para 16 colores</td>
+                        <td class="py-2 px-4 border-b">Mejoró la interfaz de usuario, con el Program Manager y el File Manager. Mejor soporte para aplicaciones DOS.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen2WinH.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows 3.1 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">3.1</td>
+                        <td class="py-2 px-4 border-b">45294</td>
+                        <td class="py-2 px-4 border-b">1992</td>
+                        <td class="py-2 px-4 border-b">Intel 80386 o superior</td>
+                        <td class="py-2 px-4 border-b">12-33 MHz</td>
+                        <td class="py-2 px-4 border-b">x86</td>
+                        <td class="py-2 px-4 border-b">Introdujo mejoras en la multitarea, pero seguía siendo limitado en cuanto a manejo de hilos comparado con versiones modernas.</td>
+                        <td class="py-2 px-4 border-b">DRAM</td>
+                        <td class="py-2 px-4 border-b">2 MB o más</td>
+                        <td class="py-2 px-4 border-b">12-33 MHz (procesadores Intel 80286 y 80386)</td>
+                        <td class="py-2 px-4 border-b">Soporte para TrueType</td>
+                        <td class="py-2 px-4 border-b">Tipografías TrueType, mejor soporte multimedia y mejor rendimiento general.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen3WinH.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows 95 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">95</td>
+                        <td class="py-2 px-4 border-b">4.0</td>
+                        <td class="py-2 px-4 border-b">1995</td>
+                        <td class="py-2 px-4 border-b">Intel Pentium o compatible</td>
+                        <td class="py-2 px-4 border-b">66 MHz o más</td>
+                        <td class="py-2 px-4 border-b">x86</td>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">SDRAM</td>
+                        <td class="py-2 px-4 border-b">4 MB o más</td>
+                        <td class="py-2 px-4 border-b">16-300 MHz (procesadores Intel 80386 y 80486)</td>
+                        <td class="py-2 px-4 border-b">Plug and Play</td>
+                        <td class="py-2 px-4 border-b">Introdujo el menú de inicio, la barra de tareas y nombres de archivos largos. Primera versión con Plug and Play.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen4WinH.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows 98 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">98</td>
+                        <td class="py-2 px-4 border-b">45569</td>
+                        <td class="py-2 px-4 border-b">1998</td>
+                        <td class="py-2 px-4 border-b">Intel Pentium o compatible</td>
+                        <td class="py-2 px-4 border-b">66 MHz o más</td>
+                        <td class="py-2 px-4 border-b">x86</td>
+                        <td class="py-2 px-4 border-b">Mantuvo la capacidad de manejo de hilos de Windows 95, con algunas mejoras.</td>
+                        <td class="py-2 px-4 border-b">SDRAM</td>
+                        <td class="py-2 px-4 border-b">8 MB o más</td>
+                        <td class="py-2 px-4 border-b">16-300 MHz</td>
+                        <td class="py-2 px-4 border-b">Soporte para USB</td>
+                        <td class="py-2 px-4 border-b">Mejoras en el soporte de hardware, Internet Explorer 4, y el sistema de archivos FAT32.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen5WinH.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows ME -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">ME</td>
+                        <td class="py-2 px-4 border-b">4.90</td>
+                        <td class="py-2 px-4 border-b">2000</td>
+                        <td class="py-2 px-4 border-b">Intel Pentium o compatible</td>
+                        <td class="py-2 px-4 border-b">66 MHz o más</td>
+                        <td class="py-2 px-4 border-b">x86</td>
+                        <td class="py-2 px-4 border-b">Similar a Windows 98 en términos de manejo de hilos.</td>
+                        <td class="py-2 px-4 border-b">SDRAM</td>
+                        <td class="py-2 px-4 border-b">16 MB o más</td>
+                        <td class="py-2 px-4 border-b">150-600 MHz (procesadores Intel Pentium, Pentium II y Pentium III)</td>
+                        <td class="py-2 px-4 border-b">Soporte para multimedia</td>
+                        <td class="py-2 px-4 border-b">Mejora en la interfaz de usuario, restauración del sistema y más características multimedia.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen6WinH.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows 2000 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">2000</td>
+                        <td class="py-2 px-4 border-b">5.0</td>
+                        <td class="py-2 px-4 border-b">2000</td>
+                        <td class="py-2 px-4 border-b">Intel Pentium II o superior</td>
+                        <td class="py-2 px-4 border-b">233 MHz o más</td>
+                        <td class="py-2 px-4 border-b">x86</td>
+                        <td class="py-2 px-4 border-b">Introdujo un modelo de multitarea más avanzado y soporte robusto para hilos, con un límite teórico de 32,768 hilos por proceso.</td>
+                        <td class="py-2 px-4 border-b">SDRAM</td>
+                        <td class="py-2 px-4 border-b">64 MB o más</td>
+                        <td class="py-2 px-4 border-b">16-300 MHz (procesadores Intel Pentium II y Pentium III)</td>
+                        <td class="py-2 px-4 border-b">Soporte para ACPI</td>
+                        <td class="py-2 px-4 border-b">Orientado a negocios, mayor estabilidad y seguridad, soporte para sistemas de archivos NTFS.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen7WinH.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows XP -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">XP</td>
+                        <td class="py-2 px-4 border-b">45296</td>
+                        <td class="py-2 px-4 border-b">2001</td>
+                        <td class="py-2 px-4 border-b">Intel Pentium III o superior</td>
+                        <td class="py-2 px-4 border-b">233 MHz o más</td>
+                        <td class="py-2 px-4 border-b">x86</td>
+                        <td class="py-2 px-4 border-b">Basado en Windows 2000, con soporte para un número similar de hilos por proceso.</td>
+                        <td class="py-2 px-4 border-b">DDR SDRAM</td>
+                        <td class="py-2 px-4 border-b">128 MB o más</td>
+                        <td class="py-2 px-4 border-b">1.3 - 3.8 GHz (procesadores Pentium 4, Athlon XP y posteriores)</td>
+                        <td class="py-2 px-4 border-b">Soporte para Wi-Fi</td>
+                        <td class="py-2 px-4 border-b">Nueva interfaz gráfica, mejor gestión de redes y multimedia, más estabilidad y soporte para varias cuentas de usuario.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen8WinH.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows Vista -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">Vista</td>
+                        <td class="py-2 px-4 border-b">6.0</td>
+                        <td class="py-2 px-4 border-b">2007</td>
+                        <td class="py-2 px-4 border-b">Intel Pentium 4 o superior</td>
+                        <td class="py-2 px-4 border-b">1 GHz o más</td>
+                        <td class="py-2 px-4 border-b">x86/x64</td>
+                        <td class="py-2 px-4 border-b">Mejoras en el manejo de hilos y capacidad para manejar múltiples hilos de manera más eficiente.</td>
+                        <td class="py-2 px-4 border-b">DDR2 SDRAM</td>
+                        <td class="py-2 px-4 border-b">512 MB o más</td>
+                        <td class="py-2 px-4 border-b">1.8 - 3.4 GHz (procesadores Intel Core y AMD Athlon 64 X2)</td>
+                        <td class="py-2 px-4 border-b">Aero Glass</td>
+                        <td class="py-2 px-4 border-b">Nueva interfaz Aero, mejores capacidades de búsqueda, seguridad mejorada con UAC.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen9WinH.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows 7 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">7</td>
+                        <td class="py-2 px-4 border-b">45297</td>
+                        <td class="py-2 px-4 border-b">2009</td>
+                        <td class="py-2 px-4 border-b">Intel Core 2 o superior</td>
+                        <td class="py-2 px-4 border-b">1 GHz o más</td>
+                        <td class="py-2 px-4 border-b">x86/x64</td>
+                        <td class="py-2 px-4 border-b">Continuó con el modelo de manejo de hilos de Windows Vista, con mejoras en la estabilidad y rendimiento.</td>
+                        <td class="py-2 px-4 border-b">DDR3 SDRAM</td>
+                        <td class="py-2 px-4 border-b">1 GB (32-bit) o 2 GB (64-bit) o más</td>
+                        <td class="py-2 px-4 border-b">1.8 - 3.5 GHz (procesadores Intel Core 2 Duo, Core i3/i5/i7, AMD Phenom II)</td>
+                        <td class="py-2 px-4 border-b">Soporte para multitouch</td>
+                        <td class="py-2 px-4 border-b">Mejor rendimiento, interfaz más pulida, mejor soporte para dispositivos táctiles.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen10WinH.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows 8 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">8</td>
+                        <td class="py-2 px-4 border-b">45328</td>
+                        <td class="py-2 px-4 border-b">2012</td>
+                        <td class="py-2 px-4 border-b">Intel Core i3 o superior</td>
+                        <td class="py-2 px-4 border-b">1 GHz o más</td>
+                        <td class="py-2 px-4 border-b">x86/x64</td>
+                        <td class="py-2 px-4 border-b">Mejoras en el rendimiento general, incluyendo el manejo de hilos.</td>
+                        <td class="py-2 px-4 border-b">DDR3 SDRAM</td>
+                        <td class="py-2 px-4 border-b">1 GB (32-bit) o 2 GB (64-bit) o más</td>
+                        <td class="py-2 px-4 border-b">1.8 - 4.0 GHz (procesadores Intel Core i3/i5/i7, AMD FX)</td>
+                        <td class="py-2 px-4 border-b">Soporte para UEFI</td>
+                        <td class="py-2 px-4 border-b">Interfaz Metro, mejor soporte para dispositivos táctiles, inicio rápido.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen11WinH.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows 8.1 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">8.1</td>
+                        <td class="py-2 px-4 border-b">45357</td>
+                        <td class="py-2 px-4 border-b">2013</td>
+                        <td class="py-2 px-4 border-b">Intel Core i3 o superior</td>
+                        <td class="py-2 px-4 border-b">1 GHz o más</td>
+                        <td class="py-2 px-4 border-b">x86/x64</td>
+                        <td class="py-2 px-4 border-b">Mejoras adicionales en el rendimiento y gestión de hilos respecto a Windows 8.</td>
+                        <td class="py-2 px-4 border-b">DDR3 SDRAM</td>
+                        <td class="py-2 px-4 border-b">1 GB (32-bit) o 2 GB (64-bit) o más</td>
+                        <td class="py-2 px-4 border-b">1.8 - 4.0 GHz (procesadores Intel Core i3/i5/i7, AMD FX)</td>
+                        <td class="py-2 px-4 border-b">Mejoras en UEFI</td>
+                        <td class="py-2 px-4 border-b">Mejoras en la interfaz de usuario, regreso del botón de inicio, mejor integración con servicios en la nube.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen12WinH.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows 10 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">10</td>
+                        <td class="py-2 px-4 border-b">10.0</td>
+                        <td class="py-2 px-4 border-b">2015</td>
+                        <td class="py-2 px-4 border-b">Intel Core i3 o superior</td>
+                        <td class="py-2 px-4 border-b">1 GHz o más</td>
+                        <td class="py-2 px-4 border-b">x86/x64</td>
+                        <td class="py-2 px-4 border-b">Soporta un alto número de hilos por proceso, similar a versiones anteriores, con mejoras en la eficiencia.</td>
+                        <td class="py-2 px-4 border-b">DDR3/DDR4 SDRAM</td>
+                        <td class="py-2 px-4 border-b">1 GB (32-bit) o 2 GB (64-bit) o más</td>
+                        <td class="py-2 px-4 border-b">1.8 - 5.0 GHz (procesadores Intel Core i5/i7/i9, AMD Ryzen)</td>
+                        <td class="py-2 px-4 border-b">Soporte para DirectX 12</td>
+                        <td class="py-2 px-4 border-b">Interfaz unificada para diferentes dispositivos, Cortana, navegador Edge, actualizaciones frecuentes.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen13WinH.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows 11 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">11</td>
+                        <td class="py-2 px-4 border-b">10.0</td>
+                        <td class="py-2 px-4 border-b">2021</td>
+                        <td class="py-2 px-4 border-b">Intel Core i5 de 8ª generación o AMD Ryzen 5 2000 o superior</td>
+                        <td class="py-2 px-4 border-b">1 GHz o más</td>
+                        <td class="py-2 px-4 border-b">x86/x64</td>
+                        <td class="py-2 px-4 border-b">Similar a Windows 10 en términos de manejo de hilos, con optimizaciones adicionales para el rendimiento y la gestión de tareas.</td>
+                        <td class="py-2 px-4 border-b">DDR4 SDRAM</td>
+                        <td class="py-2 px-4 border-b">4 GB o más</td>
+                        <td class="py-2 px-4 border-b">1.8 - 5.0 GHz (procesadores Intel Core i5/i7/i9, AMD Ryzen)</td>
+                        <td class="py-2 px-4 border-b">Soporte para TPM 2.0</td>
+                        <td class="py-2 px-4 border-b">Nueva interfaz de usuario, mejoras en rendimiento y seguridad, mejor integración con aplicaciones Android.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen14WinH.png" alt="" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="windows-server" class="table-container">
+            <h2 class="text-3xl font-bold mb-4">Historia Windows Server</h2>
+            <table class="min-w-full bg-white border border-gray-300">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Sistema Operativo</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Versión</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Código de Versión</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Lanzamiento</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Procesador</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Velocidad</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Arquitectura</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Manejo de Hilos</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Tipo de Memoria</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Capacidad de Memoria</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Velocidad de Memoria</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Mejoras en Hardware</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Características</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Pantallazo Escritorio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Fila para Windows NT 3.1 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">NT 3.1</td>
+                        <td class="py-2 px-4 border-b">3.1</td>
+                        <td class="py-2 px-4 border-b">1993</td>
+                        <td class="py-2 px-4 border-b">Intel 80386</td>
+                        <td class="py-2 px-4 border-b">12-33 MHz</td>
+                        <td class="py-2 px-4 border-b">x86</td>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">Sistema Operativo Empresarial</td>
+                        <td class="py-2 px-4 border-b">Discos duros (hasta 2 GB)</td>
+                        <td class="py-2 px-4 border-b">25 MHz</td>
+                        <td class="py-2 px-4 border-b">Soporte para múltiples arquitecturas</td>
+                        <td class="py-2 px-4 border-b">Primer sistema operativo NT de 32 bits, multitarea preferente, soporte para multiprocesamiento simétrico.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen1WinServer.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows NT 4.0 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">NT 4.0</td>
+                        <td class="py-2 px-4 border-b">4.0</td>
+                        <td class="py-2 px-4 border-b">1996</td>
+                        <td class="py-2 px-4 border-b">Intel Pentium</td>
+                        <td class="py-2 px-4 border-b">60-300 MHz</td>
+                        <td class="py-2 px-4 border-b">x86</td>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">Sistema Operativo Empresarial</td>
+                        <td class="py-2 px-4 border-b">Discos duros (hasta 4 GB)</td>
+                        <td class="py-2 px-4 border-b">33 MHz</td>
+                        <td class="py-2 px-4 border-b">GDI en modo kernel</td>
+                        <td class="py-2 px-4 border-b">Interfaz gráfica similar a Windows 95, mejoras en seguridad y estabilidad.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen2WinServer.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows 2000 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">2000</td>
+                        <td class="py-2 px-4 border-b">5.0</td>
+                        <td class="py-2 px-4 border-b">2000</td>
+                        <td class="py-2 px-4 border-b">Intel Pentium II/III/IV</td>
+                        <td class="py-2 px-4 border-b">233 MHz - 1 GHz</td>
+                        <td class="py-2 px-4 border-b">x86</td>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">Sistema Operativo Empresarial</td>
+                        <td class="py-2 px-4 border-b">Discos duros (hasta 1 TB)</td>
+                        <td class="py-2 px-4 border-b">133 MHz</td>
+                        <td class="py-2 px-4 border-b">Soporte para ACPI</td>
+                        <td class="py-2 px-4 border-b">Mejoras en la gestión de directorios activos, sistema de archivos NTFS 3.0.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen3WinServer.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows XP Professional -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">XP Professional</td>
+                        <td class="py-2 px-4 border-b">5.1</td>
+                        <td class="py-2 px-4 border-b">2001</td>
+                        <td class="py-2 px-4 border-b">Intel Pentium 4</td>
+                        <td class="py-2 px-4 border-b">1.3 - 3.8 GHz</td>
+                        <td class="py-2 px-4 border-b">x86</td>
+                        <td class="py-2 px-4 border-b">1</td>
+                        <td class="py-2 px-4 border-b">Sistema Operativo Empresarial</td>
+                        <td class="py-2 px-4 border-b">Discos duros (hasta 2 TB)</td>
+                        <td class="py-2 px-4 border-b">233 MHz</td>
+                        <td class="py-2 px-4 border-b">Soporte para Wi-Fi</td>
+                        <td class="py-2 px-4 border-b">Mejora en rendimiento y gráficos</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen4WinServer.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows Vista Business -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">Vista Business</td>
+                        <td class="py-2 px-4 border-b">6.0</td>
+                        <td class="py-2 px-4 border-b">2007</td>
+                        <td class="py-2 px-4 border-b">Intel Core 2 Duo</td>
+                        <td class="py-2 px-4 border-b">1.8 - 3.0 GHz</td>
+                        <td class="py-2 px-4 border-b">x86/x64</td>
+                        <td class="py-2 px-4 border-b">2</td>
+                        <td class="py-2 px-4 border-b">Sistema Operativo Empresarial</td>
+                        <td class="py-2 px-4 border-b">Discos duros (hasta 2 TB)</td>
+                        <td class="py-2 px-4 border-b">800 MHz en adelante</td>
+                        <td class="py-2 px-4 border-b">Aero Glass</td>
+                        <td class="py-2 px-4 border-b">Requerimientos de hardware más altos</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen5WinServer.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows 7 Professional -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">7 Professional</td>
+                        <td class="py-2 px-4 border-b">6.1</td>
+                        <td class="py-2 px-4 border-b">2009</td>
+                        <td class="py-2 px-4 border-b">Intel Core i3/i5/i7</td>
+                        <td class="py-2 px-4 border-b">1.8 - 3.4 GHz</td>
+                        <td class="py-2 px-4 border-b">x86/x64</td>
+                        <td class="py-2 px-4 border-b">2h-4h</td>
+                        <td class="py-2 px-4 border-b">Sistema Operativo Empresarial</td>
+                        <td class="py-2 px-4 border-b">Discos duros (hasta 2 TB)</td>
+                        <td class="py-2 px-4 border-b">1 GHz en adelante</td>
+                        <td class="py-2 px-4 border-b">Soporte para multitouch</td>
+                        <td class="py-2 px-4 border-b">Mejoras en rendimiento, Windows Touch para pantallas táctiles.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen6WinServer.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows 8.1 Pro -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">8.1 Pro</td>
+                        <td class="py-2 px-4 border-b">6.3</td>
+                        <td class="py-2 px-4 border-b">2013</td>
+                        <td class="py-2 px-4 border-b">Intel Core i3/i5/i7</td>
+                        <td class="py-2 px-4 border-b">1.8 - 3.5 GHz</td>
+                        <td class="py-2 px-4 border-b">x86/x64</td>
+                        <td class="py-2 px-4 border-b">2h-4h</td>
+                        <td class="py-2 px-4 border-b">Sistema Operativo Empresarial</td>
+                        <td class="py-2 px-4 border-b">Discos duros (hasta 2 TB)</td>
+                        <td class="py-2 px-4 border-b">1 GHz en adelante</td>
+                        <td class="py-2 px-4 border-b">Mejoras en UEFI</td>
+                        <td class="py-2 px-4 border-b">Optimización para dispositivos táctiles y modernización del hardware</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen7WinServer.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows 10 Pro -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">10 Pro</td>
+                        <td class="py-2 px-4 border-b">10.0</td>
+                        <td class="py-2 px-4 border-b">2015</td>
+                        <td class="py-2 px-4 border-b">Intel Core i3/i5/i7</td>
+                        <td class="py-2 px-4 border-b">1.8 - 4.0 GHz</td>
+                        <td class="py-2 px-4 border-b">x86/x64</td>
+                        <td class="py-2 px-4 border-b">2h-4h</td>
+                        <td class="py-2 px-4 border-b">Sistema Operativo Empresarial</td>
+                        <td class="py-2 px-4 border-b">Discos duros (hasta 4 TB)</td>
+                        <td class="py-2 px-4 border-b">1 GHz en adelante</td>
+                        <td class="py-2 px-4 border-b">Soporte para DirectX 12</td>
+                        <td class="py-2 px-4 border-b">Mejora en compatibilidad con hardware moderno</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen8WinServer.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para Windows 11 Pro -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Windows</td>
+                        <td class="py-2 px-4 border-b">11 Pro</td>
+                        <td class="py-2 px-4 border-b">10.0</td>
+                        <td class="py-2 px-4 border-b">2021</td>
+                        <td class="py-2 px-4 border-b">Intel Core i5/i7/i9</td>
+                        <td class="py-2 px-4 border-b">1.8 - 5.0 GHz</td>
+                        <td class="py-2 px-4 border-b">x86/x64</td>
+                        <td class="py-2 px-4 border-b">2h-4h</td>
+                        <td class="py-2 px-4 border-b">Sistema Operativo Empresarial</td>
+                        <td class="py-2 px-4 border-b">Discos duros (hasta 4 TB)</td>
+                        <td class="py-2 px-4 border-b">1 GHz en adelante</td>
+                        <td class="py-2 px-4 border-b">Soporte para TPM 2.0</td>
+                        <td class="py-2 px-4 border-b">Requisitos de hardware más estrictos</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen9WinServer.png" alt="" /></td>
+                    </tr>
+                </tbody>                
+            </table>
+        </div>
+
+        <div id="mac-os" class="table-container">
+            <h2 class="text-3xl font-bold mb-4">Historia MAC OS</h2>
+            <table class="min-w-full bg-white border border-gray-300">
+                <thead>
+                    <tr>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Sistema Operativo</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Versión</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Código de Versión</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Lanzamiento</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Procesador</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Velocidad</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Arquitectura</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Manejo de Hilos</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Tipo de Memoria</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Capacidad de Memoria</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Velocidad de Memoria</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Mejoras en Hardware</th>
+                        <th class="py-2 px-4 bg-gray-100 border-b border-gray-300">Pantallazo Escritorio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Fila para RHAPSODY DEVELOPER RELEASE -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Mac OS X</td>
+                        <td class="py-2 px-4 border-b">Rhapsody Developer Release</td>
+                        <td class="py-2 px-4 border-b">Kernel Mach 2.5</td>
+                        <td class="py-2 px-4 border-b">Agosto de 1997</td>
+                        <td class="py-2 px-4 border-b">PowerPC e Intel</td>
+                        <td class="py-2 px-4 border-b">PowerPC G3 a 233 MHz</td>
+                        <td class="py-2 px-4 border-b">1 hilo por núcleo</td>
+                        <td class="py-2 px-4 border-b">SDRAM</td>
+                        <td class="py-2 px-4 border-b">64 MB</td>
+                        <td class="py-2 px-4 border-b">66 MHz</td>
+                        <td class="py-2 px-4 border-b">Soporte inicial para arquitectura PowerPC e Intel. Compatibilidad con hardware de desarrollo y prototipos.</td>
+                        <td class="py-2 px-4 border-b">Primeros pasos hacia la interfaz Aqua. Introducción de tecnologías de desarrollo y APIs base.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen1Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MAC OS X SERVER 1.0 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Mac OS X</td>
+                        <td class="py-2 px-4 border-b">Server 1.0</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU (Mach 2.5 + BSD)</td>
+                        <td class="py-2 px-4 border-b">Marzo de 1999</td>
+                        <td class="py-2 px-4 border-b">PowerPC</td>
+                        <td class="py-2 px-4 border-b">PowerPC G3 a 233 MHz</td>
+                        <td class="py-2 px-4 border-b">1 hilo por núcleo</td>
+                        <td class="py-2 px-4 border-b">SDRAM</td>
+                        <td class="py-2 px-4 border-b">64 MB</td>
+                        <td class="py-2 px-4 border-b">66 MHz</td>
+                        <td class="py-2 px-4 border-b">Soporte para servidores y hardware de red. Gestión mejorada de recursos de hardware en servidores.</td>
+                        <td class="py-2 px-4 border-b">Interfaz de administración de servidores. Mejoras en la seguridad y gestión de usuarios.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen2Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MAC OS X DEVELOPER PREVIEW -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Mac OS X</td>
+                        <td class="py-2 px-4 border-b">Developer Preview</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Marzo de 1999</td>
+                        <td class="py-2 px-4 border-b">PowerPC</td>
+                        <td class="py-2 px-4 border-b">PowerPC G3 a 233 MHz</td>
+                        <td class="py-2 px-4 border-b">1 hilo por núcleo</td>
+                        <td class="py-2 px-4 border-b">SDRAM</td>
+                        <td class="py-2 px-4 border-b">64 MB</td>
+                        <td class="py-2 px-4 border-b">66 MHz</td>
+                        <td class="py-2 px-4 border-b">Mejora en la compatibilidad con dispositivos periféricos. Soporte ampliado para hardware de prueba y desarrollo.</td>
+                        <td class="py-2 px-4 border-b">Introducción de herramientas de desarrollo y depuración. Mejoras en la estabilidad del sistema operativo.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen3Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MAC OS X PUBLIC BETA -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Mac OS X</td>
+                        <td class="py-2 px-4 border-b">Public Beta</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Septiembre de 2000</td>
+                        <td class="py-2 px-4 border-b">PowerPC</td>
+                        <td class="py-2 px-4 border-b">PowerPC G3 a 233 MHz</td>
+                        <td class="py-2 px-4 border-b">1 hilo por núcleo</td>
+                        <td class="py-2 px-4 border-b">SDRAM</td>
+                        <td class="py-2 px-4 border-b">64 MB</td>
+                        <td class="py-2 px-4 border-b">66 MHz</td>
+                        <td class="py-2 px-4 border-b">Soporte mejorado para dispositivos gráficos y de entrada. Compatibilidad con más modelos de Mac.</td>
+                        <td class="py-2 px-4 border-b">Introducción de la interfaz Aqua para el público. Mejoras en la multitarea y gestión de ventanas.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen4Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MAC OS X 10.0 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Mac OS X</td>
+                        <td class="py-2 px-4 border-b">10.0 (Cheetah)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Marzo de 2001</td>
+                        <td class="py-2 px-4 border-b">PowerPC</td>
+                        <td class="py-2 px-4 border-b">PowerPC G3 a 233 MHz</td>
+                        <td class="py-2 px-4 border-b">1 hilo por núcleo</td>
+                        <td class="py-2 px-4 border-b">SDRAM</td>
+                        <td class="py-2 px-4 border-b">64 MB</td>
+                        <td class="py-2 px-4 border-b">66 MHz</td>
+                        <td class="py-2 px-4 border-b">Soporte para FireWire y USB. Mejora en la gestión de memoria.</td>
+                        <td class="py-2 px-4 border-b">Introducción de la interfaz Aqua. Nuevas aplicaciones nativas como Mail y Finder.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen5Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MAC OS X 10.1 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Mac OS X</td>
+                        <td class="py-2 px-4 border-b">10.1 (Puma)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Septiembre de 2001</td>
+                        <td class="py-2 px-4 border-b">PowerPC</td>
+                        <td class="py-2 px-4 border-b">PowerPC G3 a 233 MHz</td>
+                        <td class="py-2 px-4 border-b">1 hilo por núcleo</td>
+                        <td class="py-2 px-4 border-b">SDRAM</td>
+                        <td class="py-2 px-4 border-b">128 MB</td>
+                        <td class="py-2 px-4 border-b">66 MHz</td>
+                        <td class="py-2 px-4 border-b">Mejoras en la gestión de recursos y dispositivos de entrada. Compatibilidad con más dispositivos externos.</td>
+                        <td class="py-2 px-4 border-b">Aumento en la velocidad y rendimiento. Mejoras en la estabilidad del sistema.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen6Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MAC OS X 10.2 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Mac OS X</td>
+                        <td class="py-2 px-4 border-b">10.2 (Jaguar)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Agosto de 2002</td>
+                        <td class="py-2 px-4 border-b">PowerPC</td>
+                        <td class="py-2 px-4 border-b">PowerPC G3 a 233 MHz</td>
+                        <td class="py-2 px-4 border-b">1 hilo por núcleo</td>
+                        <td class="py-2 px-4 border-b">SDRAM</td>
+                        <td class="py-2 px-4 border-b">128 MB</td>
+                        <td class="py-2 px-4 border-b">66 MHz</td>
+                        <td class="py-2 px-4 border-b">Mejoras en la compatibilidad de hardware y soporte para dispositivos de red.</td>
+                        <td class="py-2 px-4 border-b">Introducción de nuevas características como Quartz Extreme y soporte para 3D.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen7Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MAC OS X 10.3 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Mac OS X</td>
+                        <td class="py-2 px-4 border-b">10.3 (Panther)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Octubre de 2003</td>
+                        <td class="py-2 px-4 border-b">PowerPC</td>
+                        <td class="py-2 px-4 border-b">PowerPC G4 a 400 MHz</td>
+                        <td class="py-2 px-4 border-b">1 hilo por núcleo</td>
+                        <td class="py-2 px-4 border-b">SDRAM</td>
+                        <td class="py-2 px-4 border-b">256 MB</td>
+                        <td class="py-2 px-4 border-b">133 MHz</td>
+                        <td class="py-2 px-4 border-b">Compatibilidad con periféricos de mayor velocidad y nuevos estándares de red.</td>
+                        <td class="py-2 px-4 border-b">Mejoras en la interfaz de usuario y en la velocidad del sistema. Introducción de Exposé.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen8Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MAC OS X 10.4 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Mac OS X</td>
+                        <td class="py-2 px-4 border-b">10.4 (Tiger)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Abril de 2005</td>
+                        <td class="py-2 px-4 border-b">PowerPC</td>
+                        <td class="py-2 px-4 border-b">PowerPC G4 a 800 MHz</td>
+                        <td class="py-2 px-4 border-b">1 hilo por núcleo</td>
+                        <td class="py-2 px-4 border-b">DDR SDRAM</td>
+                        <td class="py-2 px-4 border-b">512 MB</td>
+                        <td class="py-2 px-4 border-b">166 MHz</td>
+                        <td class="py-2 px-4 border-b">Introducción de Spotlight para búsqueda avanzada y Front Row para multimedia.</td>
+                        <td class="py-2 px-4 border-b">Mejoras en la seguridad y nuevas características de rendimiento.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen9Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MAC OS X 10.5 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Mac OS X</td>
+                        <td class="py-2 px-4 border-b">10.5 (Leopard)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Octubre de 2007</td>
+                        <td class="py-2 px-4 border-b">PowerPC e Intel</td>
+                        <td class="py-2 px-4 border-b">Intel Core 2 Duo a 1.83 GHz</td>
+                        <td class="py-2 px-4 border-b">2 hilos por núcleo</td>
+                        <td class="py-2 px-4 border-b">DDR2 SDRAM</td>
+                        <td class="py-2 px-4 border-b">2 GB</td>
+                        <td class="py-2 px-4 border-b">667 MHz</td>
+                        <td class="py-2 px-4 border-b">Mejoras en la compatibilidad de hardware y soporte para gráficos 3D avanzados.</td>
+                        <td class="py-2 px-4 border-b">Introducción de Time Machine y nuevas herramientas de desarrollo. Mejoras en la interfaz gráfica.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen10Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MAC OS X 10.6 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Mac OS X</td>
+                        <td class="py-2 px-4 border-b">10.6 (Snow Leopard)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Agosto de 2009</td>
+                        <td class="py-2 px-4 border-b">PowerPC e Intel</td>
+                        <td class="py-2 px-4 border-b">Intel Core 2 Duo a 2.0 GHz</td>
+                        <td class="py-2 px-4 border-b">2 hilos por núcleo</td>
+                        <td class="py-2 px-4 border-b">DDR3 SDRAM</td>
+                        <td class="py-2 px-4 border-b">4 GB</td>
+                        <td class="py-2 px-4 border-b">800 MHz</td>
+                        <td class="py-2 px-4 border-b">Mejoras en la eficiencia y rendimiento del sistema. Soporte para la arquitectura 64 bits.</td>
+                        <td class="py-2 px-4 border-b">Introducción de Grand Central Dispatch y OpenCL. Mejora de la estabilidad del sistema.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen11Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MAC OS X 10.7 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Mac OS X</td>
+                        <td class="py-2 px-4 border-b">10.7 (Lion)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Julio de 2011</td>
+                        <td class="py-2 px-4 border-b">Intel</td>
+                        <td class="py-2 px-4 border-b">Intel Core i5 a 2.5 GHz</td>
+                        <td class="py-2 px-4 border-b">4 hilos por núcleo</td>
+                        <td class="py-2 px-4 border-b">DDR3 SDRAM</td>
+                        <td class="py-2 px-4 border-b">4 GB</td>
+                        <td class="py-2 px-4 border-b">1333 MHz</td>
+                        <td class="py-2 px-4 border-b">Mejoras en la interfaz de usuario y nuevas características como Mission Control y Launchpad.</td>
+                        <td class="py-2 px-4 border-b">Introducción de características de iOS y mejoras en la integración de dispositivos.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen12Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MAC OS X 10.8 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Mac OS X</td>
+                        <td class="py-2 px-4 border-b">10.8 (Mountain Lion)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Julio de 2012</td>
+                        <td class="py-2 px-4 border-b">Intel</td>
+                        <td class="py-2 px-4 border-b">Intel Core i7 a 2.8 GHz</td>
+                        <td class="py-2 px-4 border-b">4 hilos por núcleo</td>
+                        <td class="py-2 px-4 border-b">DDR3 SDRAM</td>
+                        <td class="py-2 px-4 border-b">8 GB</td>
+                        <td class="py-2 px-4 border-b">1600 MHz</td>
+                        <td class="py-2 px-4 border-b">Integración con servicios en la nube y mejora en la compatibilidad con aplicaciones de iOS.</td>
+                        <td class="py-2 px-4 border-b">Introducción de características como iCloud y nuevas mejoras en la estabilidad del sistema.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen13Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para MAC OS X 10.9 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">Mac OS X</td>
+                        <td class="py-2 px-4 border-b">10.9 (Mavericks)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Octubre de 2013</td>
+                        <td class="py-2 px-4 border-b">Intel</td>
+                        <td class="py-2 px-4 border-b">Intel Core i5 a 2.5 GHz</td>
+                        <td class="py-2 px-4 border-b">4 hilos por núcleo</td>
+                        <td class="py-2 px-4 border-b">DDR3 SDRAM</td>
+                        <td class="py-2 px-4 border-b">8 GB</td>
+                        <td class="py-2 px-4 border-b">1600 MHz</td>
+                        <td class="py-2 px-4 border-b">Mejoras en la eficiencia energética y nuevas características como iBooks y mapas mejorados.</td>
+                        <td class="py-2 px-4 border-b">Optimización del sistema para un mejor rendimiento y menor consumo de energía.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen14Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para OS X 10.10 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">OS X</td>
+                        <td class="py-2 px-4 border-b">10.10 (Yosemite)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Octubre de 2014</td>
+                        <td class="py-2 px-4 border-b">Intel</td>
+                        <td class="py-2 px-4 border-b">Intel Core i7 a 3.0 GHz</td>
+                        <td class="py-2 px-4 border-b">4 hilos por núcleo</td>
+                        <td class="py-2 px-4 border-b">DDR3 SDRAM</td>
+                        <td class="py-2 px-4 border-b">8 GB</td>
+                        <td class="py-2 px-4 border-b">1600 MHz</td>
+                        <td class="py-2 px-4 border-b">Diseño renovado con una interfaz más moderna y características como Continuity.</td>
+                        <td class="py-2 px-4 border-b">Introducción de nuevas funciones de sincronización entre dispositivos Apple y mejoras en la interfaz de usuario.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen15Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para OS X 10.11 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">OS X</td>
+                        <td class="py-2 px-4 border-b">10.11 (El Capitan)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Septiembre de 2015</td>
+                        <td class="py-2 px-4 border-b">Intel</td>
+                        <td class="py-2 px-4 border-b">Intel Core i7 a 3.2 GHz</td>
+                        <td class="py-2 px-4 border-b">4 hilos por núcleo</td>
+                        <td class="py-2 px-4 border-b">DDR4 SDRAM</td>
+                        <td class="py-2 px-4 border-b">8 GB</td>
+                        <td class="py-2 px-4 border-b">2133 MHz</td>
+                        <td class="py-2 px-4 border-b">Mejoras en el rendimiento y estabilidad del sistema, con características como Split View.</td>
+                        <td class="py-2 px-4 border-b">Optimización en el uso de recursos y mejoras en la interfaz de usuario.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen16Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para macOS 10.12 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">macOS</td>
+                        <td class="py-2 px-4 border-b">10.12 (Sierra)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Septiembre de 2016</td>
+                        <td class="py-2 px-4 border-b">Intel</td>
+                        <td class="py-2 px-4 border-b">Intel Core i7 a 3.4 GHz</td>
+                        <td class="py-2 px-4 border-b">4 hilos por núcleo</td>
+                        <td class="py-2 px-4 border-b">DDR4 SDRAM</td>
+                        <td class="py-2 px-4 border-b">8 GB</td>
+                        <td class="py-2 px-4 border-b">2400 MHz</td>
+                        <td class="py-2 px-4 border-b">Introducción de Siri en macOS y nuevas funciones de integración con iCloud.</td>
+                        <td class="py-2 px-4 border-b">Mejoras en la integración con otros dispositivos y en la eficiencia del sistema.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen17Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para macOS 10.13 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">macOS</td>
+                        <td class="py-2 px-4 border-b">10.13 (High Sierra)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Septiembre de 2017</td>
+                        <td class="py-2 px-4 border-b">Intel</td>
+                        <td class="py-2 px-4 border-b">Intel Core i7 a 3.5 GHz</td>
+                        <td class="py-2 px-4 border-b">4 hilos por núcleo</td>
+                        <td class="py-2 px-4 border-b">DDR4 SDRAM</td>
+                        <td class="py-2 px-4 border-b">8 GB</td>
+                        <td class="py-2 px-4 border-b">2400 MHz</td>
+                        <td class="py-2 px-4 border-b">Mejoras en el sistema de archivos con APFS y optimización de gráficos con Metal.</td>
+                        <td class="py-2 px-4 border-b">Introducción del sistema de archivos APFS y mejoras en el rendimiento gráfico.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen18Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para macOS 10.14 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">macOS</td>
+                        <td class="py-2 px-4 border-b">10.14 (Mojave)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Septiembre de 2018</td>
+                        <td class="py-2 px-4 border-b">Intel</td>
+                        <td class="py-2 px-4 border-b">Intel Core i7 a 3.6 GHz</td>
+                        <td class="py-2 px-4 border-b">4 hilos por núcleo</td>
+                        <td class="py-2 px-4 border-b">DDR4 SDRAM</td>
+                        <td class="py-2 px-4 border-b">8 GB</td>
+                        <td class="py-2 px-4 border-b">2400 MHz</td>
+                        <td class="py-2 px-4 border-b">Modo oscuro, nuevas características de privacidad y nuevas aplicaciones.</td>
+                        <td class="py-2 px-4 border-b">Introducción del Modo Oscuro y mejoras en la privacidad.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen19Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para macOS 10.15 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">macOS</td>
+                        <td class="py-2 px-4 border-b">10.15 (Catalina)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Octubre de 2019</td>
+                        <td class="py-2 px-4 border-b">Intel</td>
+                        <td class="py-2 px-4 border-b">Intel Core i7 a 3.8 GHz</td>
+                        <td class="py-2 px-4 border-b">4 hilos por núcleo</td>
+                        <td class="py-2 px-4 border-b">DDR4 SDRAM</td>
+                        <td class="py-2 px-4 border-b">8 GB</td>
+                        <td class="py-2 px-4 border-b">2666 MHz</td>
+                        <td class="py-2 px-4 border-b">Mejoras en la seguridad y la integración con servicios en la nube, además de la eliminación de soporte para aplicaciones de 32 bits.</td>
+                        <td class="py-2 px-4 border-b">Introducción de Catalyst para portar aplicaciones de iOS y mejoras en la seguridad.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen20Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para macOS 11 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">macOS</td>
+                        <td class="py-2 px-4 border-b">11 (Big Sur)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Noviembre de 2020</td>
+                        <td class="py-2 px-4 border-b">Apple Silicon</td>
+                        <td class="py-2 px-4 border-b">Apple M1 a 2.0 GHz</td>
+                        <td class="py-2 px-4 border-b">8 hilos por núcleo</td>
+                        <td class="py-2 px-4 border-b">LPDDR4X</td>
+                        <td class="py-2 px-4 border-b">8 GB</td>
+                        <td class="py-2 px-4 border-b">4266 MHz</td>
+                        <td class="py-2 px-4 border-b">Transición a Apple Silicon, nuevos diseños en la interfaz y mejoras en el rendimiento general.</td>
+                        <td class="py-2 px-4 border-b">Introducción de la arquitectura Apple Silicon y un nuevo diseño de interfaz.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen21Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para macOS 12 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">macOS</td>
+                        <td class="py-2 px-4 border-b">12 (Monterey)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Octubre de 2021</td>
+                        <td class="py-2 px-4 border-b">Apple Silicon</td>
+                        <td class="py-2 px-4 border-b">Apple M1 a 3.2 GHz</td>
+                        <td class="py-2 px-4 border-b">8 hilos por núcleo</td>
+                        <td class="py-2 px-4 border-b">LPDDR4X</td>
+                        <td class="py-2 px-4 border-b">16 GB</td>
+                        <td class="py-2 px-4 border-b">4266 MHz</td>
+                        <td class="py-2 px-4 border-b">Nuevas características como Focus, Live Text y mejoras en la integración con iOS.</td>
+                        <td class="py-2 px-4 border-b">Introducción de nuevas funcionalidades de productividad y mejoras en la sincronización con iOS.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen22Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para macOS 13 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">macOS</td>
+                        <td class="py-2 px-4 border-b">13 (Ventura)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Octubre de 2022</td>
+                        <td class="py-2 px-4 border-b">Apple Silicon</td>
+                        <td class="py-2 px-4 border-b">Apple M2 a 3.5 GHz</td>
+                        <td class="py-2 px-4 border-b">8 hilos por núcleo</td>
+                        <td class="py-2 px-4 border-b">LPDDR5</td>
+                        <td class="py-2 px-4 border-b">16 GB</td>
+                        <td class="py-2 px-4 border-b">5400 MHz</td>
+                        <td class="py-2 px-4 border-b">Mejoras en la productividad, nuevas características como Stage Manager y mejoras en la compatibilidad con aplicaciones.</td>
+                        <td class="py-2 px-4 border-b">Introducción de Stage Manager y nuevas características de productividad y compatibilidad.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen23Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para macOS 14 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">macOS</td>
+                        <td class="py-2 px-4 border-b">14 (Sonoma)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Septiembre de 2023</td>
+                        <td class="py-2 px-4 border-b">Intel y Apple Silicon (M1, M2)</td>
+                        <td class="py-2 px-4 border-b">Intel Core i3 a 2.0 GHz y superiores, Apple Silicon (M1, M2)</td>
+                        <td class="py-2 px-4 border-b">Intel (2 hilos por núcleo con Hyper-Threading) / Apple Silicon (8 hilos en M1, 8-10 hilos en M2)</td>
+                        <td class="py-2 px-4 border-b">LPDDR4X / DDR4 SDRAM</td>
+                        <td class="py-2 px-4 border-b">4 GB</td>
+                        <td class="py-2 px-4 border-b">2133 MHz</td>
+                        <td class="py-2 px-4 border-b">Mejoras en la compatibilidad con nuevos dispositivos. Mejoras en la seguridad y gestión de energía.</td>
+                        <td class="py-2 px-4 border-b">Nuevas herramientas de productividad y accesibilidad. Mejoras en la integración con servicios de terceros.</td>
+                        <td class="py-2 px-4 border-b"><img src="..//Sitio Web/images/Imagen24Mac.png" alt="" /></td>
+                    </tr>
+                    <!-- Fila para macOS 15 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">macOS</td>
+                        <td class="py-2 px-4 border-b">15 (Sequoia)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Septiembre-Octubre de 2024</td>
+                        <td class="py-2 px-4 border-b">Apple Silicon (M1, M2)</td>
+                        <td class="py-2 px-4 border-b">(Aún no determinado)</td>
+                        <td class="py-2 px-4 border-b">Apple Silicon (8 hilos en M1, 8-10 hilos en M2)</td>
+                        <td class="py-2 px-4 border-b">LPDDR4X / DDR4 SDRAM</td>
+                        <td class="py-2 px-4 border-b">4 GB</td>
+                        <td class="py-2 px-4 border-b">2133 MHz</td>
+                        <td class="py-2 px-4 border-b">Mejor soporte para gráficos y tecnologías emergentes. Optimización para dispositivos de alto rendimiento.</td>
+                        <td class="py-2 px-4 border-b">Nuevas funcionalidades de seguridad y privacidad. Mejoras en la experiencia del usuario y rendimiento.</td>
+                        <td class="py-2 px-4 border-b">(Aún no determinado)</td>
+                    </tr>
+                    <!-- Fila para macOS 16 -->
+                    <tr>
+                        <td class="py-2 px-4 border-b">macOS</td>
+                        <td class="py-2 px-4 border-b">16 (Por determinar)</td>
+                        <td class="py-2 px-4 border-b">Kernel híbrido XNU</td>
+                        <td class="py-2 px-4 border-b">Septiembre-Octubre de 2025</td>
+                        <td class="py-2 px-4 border-b">Apple Silicon (M1, M2)</td>
+                        <td class="py-2 px-4 border-b">(Aún no determinado)</td>
+                        <td class="py-2 px-4 border-b">Apple Silicon (8 hilos en M1, 8-10 hilos en M2)</td>
+                        <td class="py-2 px-4 border-b">LPDDR4X / DDR4 SDRAM</td>
+                        <td class="py-2 px-4 border-b">4 GB</td>
+                        <td class="py-2 px-4 border-b">2133 MHz</td>
+                        <td class="py-2 px-4 border-b">(Aún no determinado)</td>
+                        <td class="py-2 px-4 border-b">(Aún no determinado)</td>
+                        <td class="py-2 px-4 border-b">(Aún no determinado)</td>
+                    </tr>                    
+                </tbody>     
+            </table>
+        </div>
+        <!-- Footer -->
+        <footer id="footer" class="bg-white-100 py-1000">
+            <div class="container mx-auto px-10 text-center">
+                <p class="mb-4">David Stiven Ocampo</p>
+                <div class="flex justify-center space-x-4 mb-4">
+                    <a class="text-blue-600 hover:text-blue-800">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a class="text-blue-600 hover:text-blue-800">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-blue-600 hover:text-blue-800">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-blue-600 hover:text-blue-800">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <p class="mb-4">somemail@example.com</p>
+                <p>© All Rights Reserved</p>
+                <p>Manizales, agosto 14 de 2024</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- JavaScript for Sidebar Toggle -->
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('open');
+        });
+
+        document.getElementById('close-sidebar').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.remove('open');
+        });
+
+        function showTable(tableId) {
+            const tables = document.querySelectorAll('.table-container');
+            tables.forEach(table => table.style.display = 'none'); // Hide all tables
+            document.getElementById(tableId).style.display = 'block'; // Show the selected table
+        }
+    </script>
+</body>
+</html>
